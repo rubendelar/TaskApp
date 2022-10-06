@@ -8,17 +8,23 @@
     <div class="container-lg">
       <div class="login">
         <h2 class="title">Task App</h2>
-        <form action="">
+        <form @submit.prevent="signIn">
           <!-- <h2>Enter your Email:</h2> -->
           <input type="email" placeholder="Email" v-model="email" id="email" />
 
           <!-- <h2>Enter your Password:</h2> -->
           <input
-            type="password"
+            type="passwordFieldType"
             placeholder="Password"
             v-model="password"
             id="password"
           />
+          <!-- <span class="">
+            <EyeIcon
+              :class="[passwordFieldIcon]"
+              @click.prevent="hidePassword = !hidePassword"
+            />
+          </span> -->
 
           <button class="acces"><a href="#">Sign in</a></button>
           <div class="registration">

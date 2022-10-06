@@ -1,8 +1,12 @@
 <template>
-  <div><a href="/auth/login">Log in</a></div>
+  <div>
+    <Nav />
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+import Nav from "../components/Nav.vue";
+</script>
 
 <style></style>
 
