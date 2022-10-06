@@ -1,5 +1,55 @@
 <template>
-  <div>New Task Component</div>
+  <div>
+    <br />
+    <br />
+    <h1 class="text-center">Keep organized ⌛</h1>
+    <br />
+    <br />
+    <h2 class="text-center">Add a new Task</h2>
+  </div>
+  <br />
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        <input type="checkbox" aria-label="Checkbox for following text input" />
+      </div>
+    </div>
+    <input
+      type="text"
+      class="form-control shadow"
+      aria-label="Text input with checkbox"
+    />
+    <button type="button" class="btn btn-primary btn-lg btn-floating">
+      <i class="fas fa-gem"></i>
+    </button>
+  </div>
+
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        <input
+          type="radio"
+          aria-label="Radio button for following text input"
+        />
+      </div>
+    </div>
+    <input
+      type="text"
+      class="form-control shadow"
+      aria-label="Text input with radio button"
+    />
+    <button type="button" class="btn btn-primary btn-lg btn-floating">
+      <i class="fas fa-gem"></i>
+    </button>
+  </div>
+  <br />
+
+  <div class="text-center">
+    <button type="button" class="btn btn-lg btn-outline-success">
+      ✏️ Create task
+    </button>
+  </div>
 </template>
 
 <script setup>

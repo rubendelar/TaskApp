@@ -36,7 +36,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Your Account
+                Your Account🔑
               </a>
               <ul class="dropdown-menu">
                 <li><p class="dropdown-item" href="#">Welcome (user)</p></li>

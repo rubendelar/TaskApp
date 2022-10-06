@@ -10,10 +10,17 @@
         <h2 class="title">Task App</h2>
         <form @submit.prevent="signIn">
           <!-- <h2>Enter your Email:</h2> -->
-          <input type="email" placeholder="Email" v-model="email" id="email" />
+          <input
+            class="shadow"
+            type="email"
+            placeholder="Email"
+            v-model="email"
+            id="email"
+          />
 
           <!-- <h2>Enter your Password:</h2> -->
           <input
+            class="shadow"
             type="passwordFieldType"
             placeholder="Password"
             v-model="password"
@@ -25,6 +32,17 @@
               @click.prevent="hidePassword = !hidePassword"
             />
           </span> -->
+
+          <!-- <div class="form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="dropdownCheck"
+            />
+            <label class="form-check-label" for="dropdownCheck">
+              Remember me
+            </label>
+          </div> -->
 
           <button class="acces"><a href="#">Sign in</a></button>
           <div class="registration">

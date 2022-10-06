@@ -1,5 +1,17 @@
 <template>
-  <div>Task Item Component</div>
+  <br /><br />
+  <div class="card">
+    <div class="card-header">Task 1</div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>Title</p>
+        <footer class="blockquote-footer">Task Detail</footer>
+      </blockquote>
+      <a href="#" class="btn">✔️</a>
+      <a href="#" class="btn">✏️</a>
+      <a href="#" class="btn">❌</a>
+    </div>
+  </div>
 </template>
 
 <script setup>
