@@ -1,5 +1,5 @@
 <template>
-  <div>hello</div>
+  <div><a href="/auth/login">Log in</a></div>
 </template>
 
 <script setup></script>
