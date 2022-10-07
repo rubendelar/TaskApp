@@ -31,14 +31,19 @@ export const useUserStore = defineStore("user", {
         console.log(this.user);
       }
     },
-    persist: {
-      enabled: true,
-      strategies: [
-        {
-          key: "user",
-          storage: localStorage,
-        },
-      ],
+    async signOut() {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+      alert("See you soon!");
     },
+  },
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        key: "user",
+        storage: localStorage,
+      },
+    ],
   },
 });

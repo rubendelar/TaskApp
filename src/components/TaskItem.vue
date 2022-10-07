@@ -1,11 +1,13 @@
 <template>
   <br /><br />
   <div class="card">
-    <div class="card-header">Task 1</div>
+    <div class="card-header">{{ task.title }}</div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>Title</p>
-        <footer class="blockquote-footer">Task Detail</footer>
+        <p>{{ task.title }}</p>
+        <footer class="blockquote-footer">
+          {{ task.description }}
+        </footer>
       </blockquote>
       <a href="#" class="btn">✔️</a>
       <a href="#" class="btn">✏️</a>
@@ -15,6 +17,15 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+
+const props = defineProps(["task"]);
+
+const emit = defineEmits(["emitRemove", "emitStatus", "emitEdit"]);
+
+// const title = ref("");
+// const description = ref("");
+
 // const emit = defineEmits([
 //   ENTER-EMITS-HERE
 // ])

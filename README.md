@@ -17,3 +17,13 @@
 -Comprender la logica involucrada de cada una de las interacciones.
 
 -Empezar a trabajar con la idea de que el fin de semana va a haber que avanzar javascript. Recabar informacion.
+
+## Viernes 07/09/2022
+
+-Existe conexion entre las tascas de la supabase y la app.
+-Log funcional.
+-Existe diseño responsive en toda la app a excepcion del sign up.
+
+.Falta incorporar nombre de usuario en el Nav.
+-Addtask da error 400.
+-Funciones de check, edit, y remove pendientes de aplicar logica.

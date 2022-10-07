@@ -49,7 +49,7 @@
                 </li> -->
                 <li>
                   <a class="dropdown-item" href="#"
-                    ><a href="/auth/login">Log out</a></a
+                    ><a @click="logOut" href="/auth/login">Log out</a></a
                   >
                 </li>
                 <!-- <li>
@@ -65,15 +65,26 @@
 </template>
 
 <script setup>
+import { useUserStore } from "../stores/user";
 //constant to save a variable that will hold the use router method
-
+const userStore = useUserStore();
 // constant to save a variable that will get the user from store with a computed function imported from vue
-
+const user = userStore.user;
 // constant that calls user email from the useUSerStore
-
+const userEmail = user.email;
 // constant that saves the user email and cleans out the @client from the user
-
+const name = userEmail.replace(/@.*$/, "");
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
+const logOut = async () => {
+  try {
+    await userStore.signOut();
+  } catch (error) {
+    errorMsg.value = `Error: ${error.message}`;
+    setTimeout(() => {
+      errorMsg.value = null;
+    }, 5000);
+  }
+};
 </script>
 
 <style></style>
