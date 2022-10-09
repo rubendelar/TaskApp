@@ -2,12 +2,14 @@
   <Nav />
   <NewTask @saveNewTask="addTaskItems" />
   <TaskItem v-for="task in fetchedTasks" :key="task" :task="task" />
+  <Footer />
 </template>
 
 <script setup>
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
+import Footer from "../components/Footer.vue";
 import { supabase } from "../supabase";
 import { useTaskStore } from "../stores/task";
 import { ref } from "vue";

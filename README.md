@@ -27,3 +27,12 @@
 .Falta incorporar nombre de usuario en el Nav.
 -Addtask da error 400.
 -Funciones de check, edit, y remove pendientes de aplicar logica.
+
+## 09/09/2022
+
+-Add task funcional
+-footer responsive
+-Nombre de usuario incorporado
+-Sign Up responsive y funcional
+
+-Funciones de check, edit, y remove pendientes de aplicar logica.

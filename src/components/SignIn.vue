@@ -1,5 +1,5 @@
 <template>
-  <h1>Organize Everything</h1>
+  <!-- <h1>Keep it Organized</h1> -->
   <p v-if="errorMsg" class="">
     {{ errorMsg }}
   </p>
@@ -7,7 +7,9 @@
   <div class="container">
     <div class="container-lg">
       <div class="login">
-        <h2 class="title">Task App</h2>
+        <h2 class="title">
+          Welcome - Log In<img src="../images/logo.png" alt="" />
+        </h2>
         <form @submit.prevent="signIn">
           <!-- <h2>Enter your Email:</h2> -->
           <input
@@ -19,13 +21,28 @@
           />
 
           <!-- <h2>Enter your Password:</h2> -->
-          <input
-            class="shadow"
-            type="passwordFieldType"
-            placeholder="Password"
-            v-model="password"
-            id="password"
-          />
+          <div class="form-group">
+            <div class="input-group">
+              <input
+                class="shadow"
+                type="password"
+                placeholder="Password"
+                v-model="password"
+                id="password"
+                required="true"
+                aria-label="password"
+                aria-describedby="basic-addon1"
+              />
+              <!-- <div class="input-group-append">
+                <span class="input-group-text">
+                  <a href="#" class="toggle_hide_password">
+                    <i class="fas fa-eye-slash" aria-hidden="true"></i>
+                  </a>
+                </span>
+              </div> -->
+            </div>
+          </div>
+
           <!-- <span class="">
             <EyeIcon
               :class="[passwordFieldIcon]"
@@ -44,14 +61,19 @@
             </label>
           </div> -->
 
-          <button class="acces"><a href="#">Sign in</a></button>
-          <div class="registration">
+          <button
+            class="btn btn-m bg-primary text-white"
+            @click.prevent="signIn"
+          >
+            Sign In
+          </button>
+          <div class="registration text-center">
             <p>
               Don't you have an account?
               <PersonalRouter
                 :route="route"
                 :buttonText="buttonText"
-                class="text-decoration-none fw-bold text-center"
+                class="text-decoration-none fw-bold"
               />
             </p>
           </div>
@@ -64,14 +86,14 @@
           <hr />
         </h4>
         <div class="icons d-grid gap-3">
-          <a
+          <!-- <a
             class="btn btn-primary"
             style="background-color: #55acee"
             href="#!"
             role="button"
             ><i class="fab fa-twitter me-2 bi bi-twitter"></i>Continue with
             Twitter
-          </a>
+          </a> -->
 
           <a
             class="btn btn-primary"
@@ -144,6 +166,8 @@ import { useLink, useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
 
+//close eye password
+
 // Route Variables
 const route = "/auth/sign-up";
 const buttonText = "Sign up";
@@ -156,10 +180,10 @@ const password = ref("");
 const errorMsg = ref("");
 
 //Show hide password variables
-const passwordFieldType = computed(() =>
-  hidePassword.value ? "password" : "text"
-);
-const hidePassword = ref(true);
+// const passwordFieldType = computed(() =>
+//   hidePassword.value ? "password" : "text"
+// );
+// const hidePassword = ref(true);
 
 // Router to push user once SignedIn to the HomeView
 const redirect = useRouter();
@@ -183,8 +207,6 @@ const signIn = async () => {
 </script>
 
 <style scoped>
-@import url("https://css.gg/instagram.css");
-
 * {
   padding: 0;
   margin: 0;
@@ -202,7 +224,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px auto;
+  margin: auto;
 }
 
 .container-lg {
@@ -242,7 +264,7 @@ h1 {
   margin-top: 15px;
   padding: 0 0 30px 0;
   text-align: center;
-  font-style: oblique;
+  font-weight: bold;
 }
 
 .login h2 {
@@ -265,37 +287,8 @@ h1 {
 
 .login button {
   width: 100%;
-  height: 40px;
   margin: 10px 0;
-  border: none;
-  outline: none;
-  color: black;
-  background-color: rgb(93, 147, 160);
-  font-size: 16px;
   border-radius: 25px;
-}
-
-.login button a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.login .acces:hover {
-  background-color: rgb(33, 182, 219, 0.5);
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.login a {
-  display: block;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 10px 0 0 0;
-}
-
-.login a:hover {
-  color: black;
 }
 
 .registration {
