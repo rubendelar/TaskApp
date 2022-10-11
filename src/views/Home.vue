@@ -1,7 +1,7 @@
 <template>
   <Nav />
   <NewTask @saveNewTask="addTaskItems" />
-  <TaskItem v-for="task in fetchedTasks" :key="task" :task="task" />
+  <TaskItem v-for="task in fetchedTasks" :key="task" :task="task" @emitRemove="deleteTask" @emitEdit="editTask"  />
   <Footer />
 </template>
 
@@ -13,6 +13,7 @@ import Footer from "../components/Footer.vue";
 import { supabase } from "../supabase";
 import { useTaskStore } from "../stores/task";
 import { ref } from "vue";
+
 
 let fetchedTasks = ref([]);
 
@@ -27,20 +28,23 @@ async function addTaskItems(task) {
   getTasks();
 }
 
-//falta checkTask
 
-async function deleteTask(task) {
-  const taskId = task.id;
-  await taskStore.deleteTask(taskId);
-  readFromStore();
+//CheckTask
+
+//Edit Task
+const editTask = async (id, title, description, time) => {
+  await useTaskStore().editTask(id, title, description, time);
+  getTasks();
+};
+
+//Remove Task
+async function deleteTask(taskId) {
+  
+  await useTaskStore().deleteTask(taskId);
+  getTasks();
 }
-async function editTask(task) {
-  const newTitle = task.newTitle;
-  const newDescription = task.newDescription;
-  const id = task.id;
-  await taskStore.editTask(newTitle, newDescription, id);
-  readFromStore();
-}
+
+
 </script>
 
 <style></style>

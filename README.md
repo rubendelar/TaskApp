@@ -36,3 +36,9 @@
 -Sign Up responsive y funcional
 
 -Funciones de check, edit, y remove pendientes de aplicar logica.
+
+## 11/09/2022
+
+-Uso de cloudinary
+
+

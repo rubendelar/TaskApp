@@ -1,27 +1,63 @@
 <template>
   <br /><br />
   <div class="card">
-    <div class="card-header">{{ task.title }}</div>
+    <div class="card-header">Created:  {{ task.time.slice(0,10) }}</div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>{{ task.title }}</p>
+        <p> <b></b> {{ task.title }}</p>
         <footer class="blockquote-footer">
           {{ task.description }}
         </footer>
       </blockquote>
-      <a href="#" class="btn">✔️</a>
-      <a href="#" class="btn">✏️</a>
-      <a href="#" class="btn">❌</a>
+      <a href="#"  class="btn">✔️</a>
+      <a href="#" @click.prevent="editTask" class="btn">✏️</a>
+      <a href="#" @click.prevent="removeTask" class="btn">❌</a>
     </div>
   </div>
 </template>
 
 <script setup>
+
 import { ref } from "vue";
 
 const props = defineProps(["task"]);
 
+
+
 const emit = defineEmits(["emitRemove", "emitStatus", "emitEdit"]);
+
+const removeTask = () => {
+      emit("emitRemove", props.task.id);
+    };
+
+    const editTask = () => {
+  emit(
+    "emitEdit",
+    props.task.id,
+    props.task.title,
+    props.task.description,
+  );
+};
+
+    const newTask = () => {
+  if (title.value === "") {
+    errorValue.value = true;
+    errorMessage.value = "Task title is required.";
+    setTimeout(() => {
+      errorValue.value = false;
+    }, 3000);
+    return errorMessage;
+  } else {
+    const newTask = {
+      title: title.value,
+      description: description.value,
+    };
+    emit("saveNewTask", newTask);
+    title.value = "";
+    description.value = "";
+  }
+};
+  
 
 // const title = ref("");
 // const description = ref("");
