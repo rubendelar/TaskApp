@@ -39,6 +39,18 @@
 
 ## 11/09/2022
 
--Uso de cloudinary
+Todas las funciones de la App funcionando.
+
+Pendientes:
+Solucionar problema del responsive en resoluciones grandes.
+Añadir una mejora del scroll.
+Mejorar la distribucion de las tareas.
+Encontrar un background color apropiado para el Sign in y el  Sign up.
+Añadir estilo a las tareas finalizadas.
+Añadir boton para limpiar la app de tareas.
+
+Extras: 
+Aplicar filtro de tareas por tareas completadas y no completadas
+
 
 

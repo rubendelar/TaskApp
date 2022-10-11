@@ -9,7 +9,7 @@
           {{ task.description }}
         </footer>
       </blockquote>
-      <a href="#"  class="btn">✔️</a>
+      <a href="#" @click.prevent="checkTask" class="btn"> {{check ? "✔️" : "🧭"}} </a>
       <a href="#" @click.prevent="showform" class="btn">✏️</a>
       <a href="#" @click.prevent="removeTask" class="btn">❌</a>
     </div>
@@ -72,19 +72,21 @@
 
 import { ref } from "vue";
 
-const title = ref(props.task.title);
-const description = ref(props.task.description);
+
 
 const props = defineProps(["task"]);
-const emit = defineEmits(["emitRemove", "emitStatus", "emitEdit"]);
+const emit = defineEmits(["emitRemove", "emitCheck", "emitEdit"]);
+
+
+//const for the Edit task
 const edition = ref(false);
 const showform =() => {
   edition.value = !edition.value;
 }
 
-const removeTask = () => {
-      emit("emitRemove", props.task.id);
-    };
+
+const title = ref(props.task.title);
+const description = ref(props.task.description);
 
 const editTask = () => {
   emit(
@@ -94,6 +96,26 @@ const editTask = () => {
     description.value,
   );
 };
+
+//const for the Check task
+const check = ref(props.task.is_complete);
+
+const checkTask = () => {
+  emit(
+  "emitCheck", 
+  props.task.id,
+  check.value);
+};
+
+//const for the Delete task
+
+const removeTask = () => {
+      emit(
+      "emitRemove", 
+      props.task.id);
+    };
+
+
 
 
   

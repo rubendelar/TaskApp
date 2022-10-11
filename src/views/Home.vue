@@ -1,7 +1,7 @@
 <template>
   <Nav />
   <NewTask @saveNewTask="addTaskItems" />
-  <TaskItem v-for="task in fetchedTasks" :key="task" :task="task" @emitRemove="deleteTask" @emitEdit="editTask"  />
+  <TaskItem v-for="task in fetchedTasks" :key="task" :task="task" @emitRemove="deleteTask"  @emitEdit="editTask" @emitCheck="checkTask" />
   <Footer />
 </template>
 
@@ -30,6 +30,10 @@ async function addTaskItems(task) {
 
 
 //CheckTask
+const checkTask = async (id, check) => {
+  await useTaskStore().checkTask(id, check);
+  getTasks();
+};
 
 //Edit Task
 const editTask = async (id, title, description) => {
