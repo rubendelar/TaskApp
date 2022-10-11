@@ -32,8 +32,8 @@ async function addTaskItems(task) {
 //CheckTask
 
 //Edit Task
-const editTask = async (id, title, description, time) => {
-  await useTaskStore().editTask(id, title, description, time);
+const editTask = async (id, title, description) => {
+  await useTaskStore().editTask(id, title, description);
   getTasks();
 };
 

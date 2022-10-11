@@ -10,53 +10,92 @@
         </footer>
       </blockquote>
       <a href="#"  class="btn">✔️</a>
-      <a href="#" @click.prevent="editTask" class="btn">✏️</a>
+      <a href="#" @click.prevent="showform" class="btn">✏️</a>
       <a href="#" @click.prevent="removeTask" class="btn">❌</a>
     </div>
   </div>
+
+  <div v-if="edition"  class="">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <img src="../images/card-heading.svg" alt="task-title" />
+        </div>
+      </div>
+      <input
+        v-model="title"
+        placeholder="Task's title"
+        type="text"
+        class="form-control shadow"
+        aria-label="Text input with checkbox"
+      />
+      <button type="button" class="btn btn-warning btn-lg btn-floating">
+        <i class="fas fa-gem"></i>
+      </button>
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <img src="../images/card-text.svg" alt="task-description" />
+        </div>
+      </div>
+      <input
+        v-model="description"
+        placeholder="Task's description"
+        type="text"
+        class="form-control shadow"
+        aria-label="Text input with radio button"
+      />
+      <button type="button" class="btn btn-warning btn-lg btn-floating">
+        <i class="fas fa-gem"></i>
+      </button>
+    </div>
+    <br />
+
+    <div class="text-center">
+      <button
+        type="button"
+        class="btn btn-m bg-warning text-black"
+        @click.prevent="editTask"
+      >
+      ✏️<!-- <img src="../images/check2-square.svg" alt="" /> -->
+        Edit task
+      </button>
+    </div>
+  </div>
+
+
 </template>
 
 <script setup>
 
 import { ref } from "vue";
 
+const title = ref(props.task.title);
+const description = ref(props.task.description);
+
 const props = defineProps(["task"]);
-
-
-
 const emit = defineEmits(["emitRemove", "emitStatus", "emitEdit"]);
+const edition = ref(false);
+const showform =() => {
+  edition.value = !edition.value;
+}
 
 const removeTask = () => {
       emit("emitRemove", props.task.id);
     };
 
-    const editTask = () => {
+const editTask = () => {
   emit(
     "emitEdit",
     props.task.id,
-    props.task.title,
-    props.task.description,
+    title.value,
+    description.value,
   );
 };
 
-    const newTask = () => {
-  if (title.value === "") {
-    errorValue.value = true;
-    errorMessage.value = "Task title is required.";
-    setTimeout(() => {
-      errorValue.value = false;
-    }, 3000);
-    return errorMessage;
-  } else {
-    const newTask = {
-      title: title.value,
-      description: description.value,
-    };
-    emit("saveNewTask", newTask);
-    title.value = "";
-    description.value = "";
-  }
-};
+
   
 
 // const title = ref("");
