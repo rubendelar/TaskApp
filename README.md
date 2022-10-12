@@ -52,5 +52,16 @@ Añadir boton para limpiar la app de tareas.
 Extras: 
 Aplicar filtro de tareas por tareas completadas y no completadas
 
+## 12/09/2022
+Pendientes:
+
+-Añadir una mejora del scroll.
+
+-Añadir estilo a las tareas finalizadas.
+
+-Añadir boton para limpiar la app de tareas.
+
+-Aplicar filtro de tareas por tareas completadas y no completadas.
+
 
 

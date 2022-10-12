@@ -1,9 +1,10 @@
 <template>
-  <div class="container">
+  <div class="container bg-light bg-gradient">
     <div class="container-lg">
       <div class="login">
-        <h2 class="title">
-          Welcome - Sign Up<img src="../images/logo.png" alt="" />
+        <h2 class="title text-dark">
+          Sign Up <br>
+          <img class="mt-3" src="../images/logo.png" alt="" /> 
         </h2>
         <form @submit.prevent="signUp">
           <!-- <h2>Enter your Email:</h2> -->
@@ -152,7 +153,7 @@ async function signUp() {
     try {
       await useUserStore().signUp(email.value, password.value);
       // if (error) throw error;
-      redirect.push({ path: "/auth" });
+      redirect.push({ path: "/auth/login" });
     } catch (error) {
       errorMsg.value = error.message;
       setTimeout(() => {

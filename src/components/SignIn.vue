@@ -4,11 +4,11 @@
     {{ errorMsg }}
   </p>
 
-  <div class="container">
+  <div class="container bg-light bg-gradient">
     <div class="container-lg">
       <div class="login">
         <h2 class="title">
-          Welcome - Log In<img src="../images/logo.png" alt="" />
+          Log In <br><img class="mt-3" src="../images/logo.png" alt="" />
         </h2>
         <form @submit.prevent="signIn">
           <!-- <h2>Enter your Email:</h2> -->
@@ -69,19 +69,20 @@
           </button>
           <div class="registration text-center">
             <p>
-              Don't you have an account?
+              Don't you have an account? <br>
               <PersonalRouter
                 :route="route"
                 :buttonText="buttonText"
                 class="text-decoration-none fw-bold"
               />
+              <br>
             </p>
           </div>
         </form>
       </div>
 
       <div class="login-nt">
-        <h4 class="title">
+        <h4 class="title pt-4"> <br>
           or
           <hr />
         </h4>

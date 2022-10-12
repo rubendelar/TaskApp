@@ -8,7 +8,7 @@
     <h2 class="text-center">Keep it Organized</h2>
   </div>
   <br />
-  <div class="">
+  <div class="mx-4">
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <div class="input-group-text">
@@ -29,7 +29,7 @@
 
     <div class="input-group">
       <div class="input-group-prepend">
-        <div class="input-group-text">
+        <div class="input-group-text input-description">
           <img src="../images/card-text.svg" alt="task-description" />
         </div>
       </div>
@@ -46,16 +46,16 @@
     </div>
     <br />
 
-    <div class="text-center">
+    
       <button
         type="button"
-        class="btn btn-m bg-primary text-white"
+        class="btn btn-m btn-block bg-primary text-white w-100 "
         @click.prevent="newTask"
       >
         <img src="../images/check2-square.svg" alt="" />
         Create task
       </button>
-    </div>
+    
   </div>
 </template>
 

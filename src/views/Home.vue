@@ -51,7 +51,9 @@ async function deleteTask(taskId) {
 
 </script>
 
-<style></style>
+<style>
+
+</style>
 
 <!-- 
 **Hints**

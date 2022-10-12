@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav class="navbar navbar-expand-md bg-light fixed-top">
-      <div class="container-fluid">
+      <div class="container-fluid mx-4">
         <a class="navbar-brand fw-bold" href="#"
           ><img src="../images/logo.png" alt="" /> TaskApp
         </a>

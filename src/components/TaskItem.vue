@@ -1,7 +1,19 @@
-<template>
+<template class ="">
   <br /><br />
-  <div class="card">
-    <div class="card-header">Created:  {{ task.time.slice(0,10) }}</div>
+  <div class="d-flex justify-content-around">
+  <div class="card mx-5 w-75  ">
+    <div class="card-header d-inline-flex justify-content-around align-items-baseline " >
+      
+      {{ task.time.slice(0,10) }} 
+      
+     
+      <div class="">
+      <a href="#" @click.prevent="checkTask" class="btn"> {{check ? "✔️" : "🧭"}} </a>
+      <a href="#" @click.prevent="showform" class="btn">✏️</a>
+      <a href="#" @click.prevent="removeTask" class="btn">🗑️</a>
+    </div>
+      
+    </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
         <p> <b></b> {{ task.title }}</p>
@@ -9,13 +21,12 @@
           {{ task.description }}
         </footer>
       </blockquote>
-      <a href="#" @click.prevent="checkTask" class="btn"> {{check ? "✔️" : "🧭"}} </a>
-      <a href="#" @click.prevent="showform" class="btn">✏️</a>
-      <a href="#" @click.prevent="removeTask" class="btn">❌</a>
+      
     </div>
   </div>
+</div>
 
-  <div v-if="edition"  class="">
+  <div v-if="edition"  class="mx-5 px-4   justify-content-around">
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <div class="input-group-text">
@@ -36,7 +47,7 @@
 
     <div class="input-group">
       <div class="input-group-prepend">
-        <div class="input-group-text">
+        <div class="input-group-text input-description">
           <img src="../images/card-text.svg" alt="task-description" />
         </div>
       </div>
@@ -130,7 +141,15 @@ const removeTask = () => {
 // const props = defineProps(["ENTER-PROP-HERE"]);
 </script>
 
-<style></style>
+<style>
+.input-group-text{
+  height: 100%;
+}
+.input-description{
+  height: 60px;
+}
+
+</style>
 
 <!-- 
 **Hints**
