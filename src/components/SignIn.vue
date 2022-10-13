@@ -2,7 +2,7 @@
  
   
 
-  <div class="container bg-light bg-gradient">
+  <div class="container1 bg-light bg-gradient">
     <div class="container-lg">
       <div class="description">
         <div class="title d-inline-flex justify-content-around align-items-center">
@@ -60,7 +60,7 @@
       </div>
     </div>
   </div>
-  <Footer />
+  <Footer2 />
 </template>
 
 <script setup>
@@ -70,7 +70,7 @@ import { supabase } from "../supabase";
 import { useLink, useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
-import Footer from "./Footer.vue";
+import Footer2 from "./Footer2.vue";
 
 //close eye password
 
@@ -128,8 +128,8 @@ h1 {
   text-align: center;
 }
 
-.container {
-  width: 100%;
+.container1 {
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -144,8 +144,8 @@ h1 {
 }
 
 .login {
-  width: 500px;
-  height: 330px;
+  width: 400px;
+  height: 350px;
   background-color: white;
   color: black;
   box-sizing: border-box;

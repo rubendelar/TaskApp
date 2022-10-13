@@ -1,11 +1,11 @@
 <template>
-  <div class="container bg-light bg-gradient">
+  <div class="container1 bg-light bg-gradient">
     <div class="container-lg">
       <div class="description">
         
         <div class="title d-inline-flex justify-content-around align-items-center">
         <h1> <span class="text-primary"> TaskApp</span>  </h1> <img class=" mt-3" src="../images/logo.png" alt="" /> </div>
-       <br> <h2 class="text-secondary">Register on TaskApp and start organizing your life.</h2>
+       <br> <h2 class="text-secondary">Register on TaskApp and start organizing.</h2>
       </div>
       <div class="login shadow-lg">
         <h2 class="title text-primary">
@@ -60,7 +60,7 @@
       </div>
     </div>
   </div>
-  <Footer />
+  <Footer2 />
 </template>
 
 <script setup>
@@ -68,7 +68,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import PersonalRouter from "./PersonalRouter.vue";
 import { useUserStore } from "../stores/user";
-import Footer from "./Footer.vue";
+import Footer2 from "./Footer2.vue";
 // Route Variables
 const route = "/auth/login";
 const buttonText = "Sign In";
@@ -114,8 +114,8 @@ h1 {
   text-align: center;
 }
 
-.container {
-  width: 100%;
+.container1 {
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;

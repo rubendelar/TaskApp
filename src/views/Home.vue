@@ -1,7 +1,7 @@
 <template>
   <NavBar />
   <NewTask @saveNewTask="addTaskItems" />
-  <div class=" flex-wrap d-flex w-100 ">
+  <div class=" flex-wrap d-flex justify-content-center">
     <TaskItem  v-for="task in fetchedTasks" :key="task" :task="task" @emitRemove="deleteTask"  @emitEdit="editTask" @emitCheck="checkTask" />
   </div>
   <Footer />

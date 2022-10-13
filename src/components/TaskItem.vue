@@ -1,8 +1,8 @@
 <template class ="">
   <br /><br />
   <div class="">
-  <div class="card mx-5 mt-5 shadow  ">
-    <div class="card-header d-inline-flex justify-content-around align-items-baseline " >
+  <div class="card mx-5 mt-5 shadow d-flex ">
+    <div class="card-header d-inline-flex  justify-content-around align-items-baseline " >
       
       <span v-if="check" class="font-monospace text-success bg-gradient fw-bold">{{ task.time.slice(0,10) }} </span> 
       <span v-else class="font-monospace secondary fw-bold">{{ task.time.slice(0,10) }} </span> 

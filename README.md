@@ -67,6 +67,5 @@ Pendientes:
 Pendientes:
 -Aplicar filtro de tareas por tareas completadas y no completadas.
 -Añadir una mejora del scroll.
--Problematica de los margenes en sign in/up.
 
 
