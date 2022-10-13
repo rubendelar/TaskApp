@@ -6,12 +6,17 @@
 
   <div class="container bg-light bg-gradient">
     <div class="container-lg">
-      <div class="login">
-        <h2 class="title">
-          Log In <br><img class="mt-3" src="../images/logo.png" alt="" />
+      <div class="description">
+        <div class="title d-inline-flex justify-content-around align-items-center">
+        <h1 class="text-primary">TaskApp  </h1> <img class="mt-3" src="../images/logo.png" alt="" /> </div>
+       <br> <h2 class="text-secondary ">TaskApp helps you organize your life.</h2>
+      </div>
+      <div class="login shadow-lg">
+        <h2 class="title text-primary">
+          TaskApp <br><img class="mt-3" src="../images/logo.png" alt="" />
         </h2>
         <form @submit.prevent="signIn">
-          <!-- <h2>Enter your Email:</h2> -->
+         
           <input
             class="shadow"
             type="email"
@@ -19,48 +24,18 @@
             v-model="email"
             id="email"
           />
-
-          <!-- <h2>Enter your Password:</h2> -->
-          <div class="form-group">
-            <div class="input-group">
-              <input
-                class="shadow"
-                type="password"
-                placeholder="Password"
-                v-model="password"
-                id="password"
-                required="true"
-                aria-label="password"
-                aria-describedby="basic-addon1"
-              />
-              <!-- <div class="input-group-append">
-                <span class="input-group-text">
-                  <a href="#" class="toggle_hide_password">
-                    <i class="fas fa-eye-slash" aria-hidden="true"></i>
-                  </a>
-                </span>
-              </div> -->
-            </div>
-          </div>
-
-          <!-- <span class="">
-            <EyeIcon
-              :class="[passwordFieldIcon]"
-              @click.prevent="hidePassword = !hidePassword"
-            />
-          </span> -->
-
-          <!-- <div class="form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="dropdownCheck"
-            />
-            <label class="form-check-label" for="dropdownCheck">
-              Remember me
-            </label>
-          </div> -->
-
+          
+          <input
+            class="shadow"
+            type="password"
+            placeholder="Password"
+            v-model="password"
+            id="password"
+            required="true"
+            aria-label="password"
+            aria-describedby="basic-addon1"
+          />
+           
           <button
             class="btn btn-m bg-primary text-white"
             @click.prevent="signIn"
@@ -75,45 +50,10 @@
                 :buttonText="buttonText"
                 class="text-decoration-none fw-bold"
               />
-              <br>
+             
             </p>
           </div>
         </form>
-      </div>
-
-      <div class="login-nt">
-        <h4 class="title pt-4"> <br>
-          or
-          <hr />
-        </h4>
-        <div class="icons d-grid gap-3">
-          <!-- <a
-            class="btn btn-primary"
-            style="background-color: #55acee"
-            href="#!"
-            role="button"
-            ><i class="fab fa-twitter me-2 bi bi-twitter"></i>Continue with
-            Twitter
-          </a> -->
-
-          <a
-            class="btn btn-primary"
-            style="background-color: #dd4b39"
-            href="#!"
-            role="button"
-            ><i class="fab fa-google me-2 bi bi-google"></i>Continue with
-            Google</a
-          >
-
-          <a
-            class="btn btn-primary"
-            style="background-color: #3b5998"
-            href="#!"
-            role="button"
-            ><i class="fab fa-facebook me-2 bi bi-facebook"></i>Continue with
-            Facebook
-          </a>
-        </div>
       </div>
     </div>
   </div>
@@ -187,30 +127,28 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto auto;
 }
 
 .container-lg {
   display: flex;
-  width: 700px;
-  height: auto;
+  width: 100%;
   background-color: transparent;
+  
 }
 
 .login {
   width: 500px;
-  height: 500px;
+  height: 330px;
   background-color: white;
   color: black;
   box-sizing: border-box;
   padding: 30px 40px;
   border: #d5d5d7 1px solid;
-  border-right: none;
-  /* border-radius: 10px; */
   animation-name: border;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  box-shadow: inset;
 }
 
 @keyframes border {
@@ -219,7 +157,9 @@ h1 {
   }
   100% {
     border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
     border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
   }
 }
 
@@ -228,19 +168,13 @@ h1 {
   padding: 0 0 30px 0;
   text-align: center;
   font-weight: bold;
-}
-
-.login h2 {
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
-  display: block;
+  display: none;
 }
 
 .login input {
   width: 100%;
   height: 50px;
-  margin: 10px 0px;
+  margin: 15px 0px;
   border: grey 1px solid;
   border-radius: 10px;
   box-shadow: inset;
@@ -260,43 +194,18 @@ h1 {
   width: 100%;
 }
 
-hr {
-  display: none;
-}
-
-.login-nt {
-  width: 500px;
-  height: 500px;
-  background-color: white;
-  color: black;
-  box-sizing: border-box;
-  padding: 50px 40px;
-  border: #d5d5d7 1px solid;
-  border-left: none;
-  /* border-radius: 10px; */
-  animation-name: border2;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-@keyframes border2 {
-  0% {
-    border-radius: 0%;
-  }
-  100% {
-    border-top-right-radius: 20%;
-    border-bottom-right-radius: 20%;
-  }
-}
-
-.login-nt .title {
-  margin-top: 15px;
-  padding: 0 0 30px 0;
-  text-align: center;
+.description{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 60px 60px;
 }
 
 @media screen and (max-width: 767px) {
+
+  .description {
+    display: none;
+  }
   .container {
     min-width: 200px;
   }
@@ -308,64 +217,29 @@ hr {
     display: table-column;
   }
 
+  .login .title {
+  margin-top: 15px;
+  padding: 0 0 30px 0;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+}
+
   .login {
     min-width: 200px;
-
     width: 100%;
-    height: 270px;
+    height: 450px;
     background-color: white;
     color: black;
     box-sizing: border-box;
     padding: 10px 15px;
     border: #d5d5d7 1px solid;
-    border-bottom: none;
-    border-radius: 0px;
     animation-name: border;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
 
-  hr {
-    display: block;
-  }
-
-  .login-nt {
-    min-width: 200px;
-    width: 100%;
-    height: 300px;
-    background-color: white;
-    color: black;
-    box-sizing: border-box;
-    padding: 60px 10px;
-    border: #d5d5d7 1px solid;
-    border-top: none;
-    border-radius: 0px;
-    animation-name: border2;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-  }
-
-  @keyframes border {
-    0% {
-      border-radius: 0%;
-    }
-    100% {
-      border-top-left-radius: 20%;
-      border-top-right-radius: 20%;
-    }
-  }
-
-  @keyframes border2 {
-    0% {
-      border-radius: 0%;
-    }
-    100% {
-      border-top-right-radius: 0%;
-      border-bottom-right-radius: 20%;
-      border-bottom-left-radius: 20%;
-    }
-  }
+ 
 }
 </style>

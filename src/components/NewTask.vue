@@ -5,7 +5,7 @@
     <!-- <h1 class="text-center">Keep organized ⌛</h1> -->
     <br />
     <br />
-    <h2 class="text-center">Keep it Organized</h2>
+    <h2 class="text-center font-monospace text-secondary">Stay Organized</h2>
   </div>
   <br />
   <div class="mx-4">

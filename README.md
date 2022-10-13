@@ -1,16 +1,16 @@
 # FINAL PROJECT
 
-## Primer dia de projecto 04/09/2022
+## Primer dia de projecto 04/10/2022
 
 - Hacer un bozeto del diseño.
 
 - Entender la estructura de la pagina web, incluyendo Javascript
 
-## Segundo dia de projecto 05/09/2022
+## Segundo dia de projecto 05/10/2022
 
 -Diseño sign in y sign up realizado y responsive.
 
-## Tercer dia de projecto 06/09/2022
+## Tercer dia de projecto 06/10/2022
 
 -Finalizar el diseño de todas las paginas de la app. Asegurando el modo responsive.
 
@@ -18,7 +18,7 @@
 
 -Empezar a trabajar con la idea de que el fin de semana va a haber que avanzar javascript. Recabar informacion.
 
-## Viernes 07/09/2022
+## Viernes 07/10/2022
 
 -Existe conexion entre las tascas de la supabase y la app.
 -Log funcional.
@@ -28,7 +28,7 @@
 -Addtask da error 400.
 -Funciones de check, edit, y remove pendientes de aplicar logica.
 
-## 09/09/2022
+## 09/10/2022
 
 -Add task funcional
 -footer responsive
@@ -37,7 +37,7 @@
 
 -Funciones de check, edit, y remove pendientes de aplicar logica.
 
-## 11/09/2022
+## 11/10/2022
 
 Todas las funciones de la App funcionando.
 
@@ -52,7 +52,7 @@ Añadir boton para limpiar la app de tareas.
 Extras: 
 Aplicar filtro de tareas por tareas completadas y no completadas
 
-## 12/09/2022
+## 12/10/2022
 Pendientes:
 
 -Añadir una mejora del scroll.
@@ -62,6 +62,9 @@ Pendientes:
 -Añadir boton para limpiar la app de tareas.
 
 -Aplicar filtro de tareas por tareas completadas y no completadas + cambio de color en la difusion de los botones cuando la tarea est marcada como compeltada.
+
+## 13/10/2022
+Pendientes:
 
 
 

@@ -1,13 +1,18 @@
 <template>
   <div class="container bg-light bg-gradient">
     <div class="container-lg">
-      <div class="login">
-        <h2 class="title text-dark">
+      <div class="description">
+        
+        <div class="title d-inline-flex justify-content-around align-items-center">
+        <h1>Register to <span class="text-primary"> TaskApp</span>  </h1> <img class=" mt-3" src="../images/logo.png" alt="" /> </div>
+       <br> <h2 class="text-secondary">Register on TaskApp and start organizing your life.</h2>
+      </div>
+      <div class="login shadow-lg">
+        <h2 class="title text-primary">
           Sign Up <br>
           <img class="mt-3" src="../images/logo.png" alt="" /> 
         </h2>
         <form @submit.prevent="signUp">
-          <!-- <h2>Enter your Email:</h2> -->
           <input
             class="shadow"
             type="email"
@@ -15,9 +20,6 @@
             v-model="email"
             id="email"
           />
-
-          <!-- <h2>Enter your Password:</h2> -->
-
           <input
             class="shadow input"
             type="password"
@@ -36,33 +38,6 @@
             required="true"
             aria-label="confirmPassword"
           />
-
-          <!-- <div class="input-group-append">
-                <span class="input-group-text">
-                  <a href="#" class="toggle_hide_password">
-                    <i class="fas fa-eye-slash" aria-hidden="true"></i>
-                  </a>
-                </span>
-              </div> -->
-
-          <!-- <span class="">
-            <EyeIcon
-              :class="[passwordFieldIcon]"
-              @click.prevent="hidePassword = !hidePassword"
-            />
-          </span> -->
-
-          <!-- <div class="form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="dropdownCheck"
-            />
-            <label class="form-check-label" for="dropdownCheck">
-              Remember me
-            </label>
-          </div> -->
-
           <button
             class="btn btn-m bg-primary text-white"
             @click.prevent="signUp"
@@ -71,7 +46,7 @@
           </button>
           <div class="registration text-center">
             <p>
-              Have an account?
+              Have an account? <br>
               <PersonalRouter
                 :route="route"
                 :buttonText="buttonText"
@@ -83,50 +58,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <div>
-    <div>Sign Up</div>
-    <PersonalRouter :route="route" :buttonText="buttonText" />
-    <p>Good Music, Patience and a lot effort</p>
-    <p>Keep calm and code on!</p>
-
-    <form @submit.prevent="signUp">
-      <div class="">
-        <label class="" for="">Email</label>
-        <input
-          class=""
-          type="email"
-          placeholder="dave@wuTangfinancial.com"
-          v-model="email"
-          id="email"
-        />
-      </div>
-      <div class="">
-        <label class="" for="">Password</label>
-        <input
-          class=""
-          type="password"
-          placeholder="************"
-          v-model="password"
-          id="password"
-        />
-      </div>
-      <div class="">
-        <label class="" for="">Confirm Password</label>
-        <input
-          class=""
-          type="password"
-          placeholder="************"
-          v-model="confirmPassword"
-          id="confirmPassword"
-        />
-      </div>
-      <button class="" type="submit">Sign Up</button>
-      <p class="">
-        <span class="">Have an account? </span>
-      </p>
-    </form>
-  </div> -->
   <Footer />
 </template>
 
@@ -189,30 +120,27 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin: auto; */
 }
 
 .container-lg {
   display: flex;
-  width: 400px;
-  height: auto;
+  width: 100%;
   background-color: transparent;
 }
 
 .login {
-  width: 350px;
-  height: 500px;
+  width: 500px;
+  height: 400px;
   background-color: white;
   color: black;
   box-sizing: border-box;
   padding: 30px 40px;
   border: #d5d5d7 1px solid;
-
-  /* border-radius: 10px; */
   animation-name: border;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  box-shadow: inset;
 }
 
 @keyframes border {
@@ -232,35 +160,20 @@ h1 {
   padding: 0 0 30px 0;
   text-align: center;
   font-weight: bold;
-}
-
-.login h2 {
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
-  display: block;
+  display: none;
 }
 
 .login input {
   width: 100%;
   height: 50px;
-  margin: 10px 0px;
+  margin: 15px 0px;
   border: grey 1px solid;
   border-radius: 10px;
   box-shadow: inset;
   font-size: 16px;
   padding-left: 10px;
 }
-.input {
-  width: 100%;
-  height: 50px;
-  margin: 10px 0px;
-  border: grey 1px solid;
-  border-radius: 10px;
-  box-shadow: inset;
-  font-size: 16px;
-  padding-left: 10px;
-}
+
 
 .login button {
   width: 100%;
@@ -274,7 +187,17 @@ h1 {
   width: 100%;
 }
 
+.description{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 60px 60px;
+}
+
 @media screen and (max-width: 767px) {
+  .description {
+    display: none;
+  }
   .container {
     min-width: 200px;
   }
@@ -286,16 +209,23 @@ h1 {
     display: table-column;
   }
 
+  .login .title {
+  margin-top: 15px;
+  padding: 0 0 30px 0;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+}
+
   .login {
     min-width: 200px;
     width: 100%;
-    height: 500px;
+    height: 525px;
     background-color: white;
     color: black;
     box-sizing: border-box;
     padding: 10px 15px;
     border: #d5d5d7 1px solid;
-
     animation-name: border;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;

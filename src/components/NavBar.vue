@@ -4,11 +4,12 @@
         <a class="navbar-brand fw-bold" href="#"
           ><img src="../images/logo.png" alt="" /> TaskApp
         </a>
-    <!-- <span class="navbar-text">
-      Navbar text with an inline element
-    </span> -->
-        <a @click="logOut" href="/auth/login" class="btn btn-sm bg-primary text-white">
-            Log out 🔑
+    <span class="text-dark text-bold">
+      Welcome back   <span class="fw-bold text-end">{{name}}</span> 
+    </span>
+
+    <a @click="logOut" href="/auth/login" class="btn btn-sm bg-primary text-white">
+           Log out 🔑
         </a>
 
     </div>

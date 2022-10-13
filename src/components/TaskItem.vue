@@ -1,7 +1,7 @@
 <template class ="">
   <br /><br />
   <div class="d-flex justify-content-around">
-  <div class="card mx-5 w-75  ">
+  <div class="card mx-5 w-75 shadow ">
     <div class="card-header d-inline-flex justify-content-around align-items-baseline " >
       
       {{ task.time.slice(0,10) }} 
