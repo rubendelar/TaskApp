@@ -1,7 +1,7 @@
 <template class ="">
   <br /><br />
   <div class="">
-  <div class="card mx-5 mt-5 w-75 shadow  ">
+  <div class="card mx-5 mt-5 shadow  ">
     <div class="card-header d-inline-flex justify-content-around align-items-baseline " >
       
       <span v-if="check" class="font-monospace text-success bg-gradient fw-bold">{{ task.time.slice(0,10) }} </span> 
@@ -26,12 +26,64 @@
           {{ task.description }}
         </footer>
       </blockquote>
-      
     </div>
+
+
+    <div v-if="edition"  class="m-3">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <img src="../images/card-heading.svg" alt="task-title" />
+        </div>
+      </div>
+      <input
+        v-model="title"
+        placeholder="Task's title"
+        type="text"
+        class="form-control shadow"
+        aria-label="Text input with checkbox"
+      />
+      <button type="button" class="btn btn-warning btn-lg btn-floating">
+        <i class="fas fa-gem"></i>
+      </button>
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text input-description">
+          <img src="../images/card-text.svg" alt="task-description" />
+        </div>
+      </div>
+      <input
+        v-model="description"
+        placeholder="Task's description"
+        type="text"
+        class="form-control shadow"
+        aria-label="Text input with radio button"
+      />
+      <button type="button" class="btn btn-warning btn-lg btn-floating">
+        <i class="fas fa-gem"></i>
+      </button>
+    </div>
+    <br />
+
+    <div class="text-center">
+      <button
+        type="button"
+        class="btn btn-m bg-warning text-black"
+        @click.prevent="editTask"
+      >
+      ✏️<!-- <img src="../images/check2-square.svg" alt="" /> -->
+        Edit task
+      </button>
+    </div>
+  </div>
+
+
   </div>
 </div>
 
- 
+  
 
 
 </template>
