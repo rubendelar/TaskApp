@@ -8,7 +8,7 @@
     <h2 class="text-center font-monospace text-secondary">Stay Organized</h2>
   </div>
   <br />
-  <div class="mx-5">
+  <div class="mx-5 sticky-sm-top ">
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <div class="input-group-text">

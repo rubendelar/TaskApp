@@ -5,7 +5,7 @@
           ><img src="../images/logo.png" alt="" /> TaskApp
         </a>
     <span class="text-dark text-bold">
-      Welcome back   <span class="fw-bold text-end">{{name}}</span> 
+      Welcome <span class="fw-bold text-end">{{name}}</span> 
     </span>
 
     <a @click="logOut" href="/auth/login" class="btn btn-sm bg-primary text-white">
