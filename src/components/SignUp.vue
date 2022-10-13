@@ -127,6 +127,7 @@
       </p>
     </form>
   </div> -->
+  <Footer />
 </template>
 
 <script setup>
@@ -134,6 +135,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import PersonalRouter from "./PersonalRouter.vue";
 import { useUserStore } from "../stores/user";
+import Footer from "./Footer.vue";
 // Route Variables
 const route = "/auth/login";
 const buttonText = "Sign In";
@@ -171,6 +173,8 @@ async function signUp() {
 
 <style scoped>
 * {
+  margin: 0;
+  padding: 0;
   font-family: "Roboto", sans-serif;
   /* background-color: rgba(138, 138, 138, 0.472); */
 }
@@ -185,7 +189,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .container-lg {

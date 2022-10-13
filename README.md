@@ -61,7 +61,7 @@ Pendientes:
 
 -Añadir boton para limpiar la app de tareas.
 
--Aplicar filtro de tareas por tareas completadas y no completadas.
+-Aplicar filtro de tareas por tareas completadas y no completadas + cambio de color en la difusion de los botones cuando la tarea est marcada como compeltada.
 
 
 

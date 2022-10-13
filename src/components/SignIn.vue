@@ -1,5 +1,5 @@
 <template>
-  <!-- <h1>Keep it Organized</h1> -->
+ 
   <p v-if="errorMsg" class="">
     {{ errorMsg }}
   </p>
@@ -117,47 +117,8 @@
       </div>
     </div>
   </div>
+  <Footer />
 </template>
-
-<!-- <form @submit.prevent="signIn">
-    <div class="">
-      <label class="" for="">Email</label>
-      <input
-        class=""
-        type="email"
-        placeholder="dave@wuTangfinancial.com"
-        v-model="email"
-        id="email"
-      />
-    </div>
-    <div class="mb-4">
-      <label class="" for="">Password</label>
-
-      <div class="">
-        <input
-          class=""
-          :type="passwordFieldType"
-          onpaste="return false"
-          placeholder="************"
-          v-model="password"
-          id="password"
-        />
-        <span class="">
-          <EyeIcon
-            :class="[passwordFieldIcon]"
-            @click.prevent="hidePassword = !hidePassword"
-          />
-        </span>
-      </div>
-    </div>
-
-    <button class="" type="submit">Sign In</button>
-    <p class="">
-      <span class="">Don’t have an account? </span>
-
-      <PersonalRouter :route="route" :buttonText="buttonText" />
-    </p>
-  </form> -->
 
 <script setup>
 import { ref, computed } from "vue";
@@ -166,6 +127,7 @@ import { supabase } from "../supabase";
 import { useLink, useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
+import Footer from "./Footer.vue";
 
 //close eye password
 
@@ -225,7 +187,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  margin: auto auto;
 }
 
 .container-lg {

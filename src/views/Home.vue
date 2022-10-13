@@ -1,12 +1,12 @@
 <template>
-  <Nav />
+  <NavBar />
   <NewTask @saveNewTask="addTaskItems" />
   <TaskItem v-for="task in fetchedTasks" :key="task" :task="task" @emitRemove="deleteTask"  @emitEdit="editTask" @emitCheck="checkTask" />
   <Footer />
 </template>
 
 <script setup>
-import Nav from "../components/Nav.vue";
+import NavBar from "../components/NavBar.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
 import Footer from "../components/Footer.vue";
