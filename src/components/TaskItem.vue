@@ -4,13 +4,21 @@
   <div class="card mx-5 w-75 shadow ">
     <div class="card-header d-inline-flex justify-content-around align-items-baseline " >
       
-      {{ task.time.slice(0,10) }} 
+      <span v-if="check" class="font-monospace text-success bg-gradient fw-bold">{{ task.time.slice(0,10) }} </span> 
+      <span v-else class="font-monospace secondary fw-bold">{{ task.time.slice(0,10) }} </span> 
       
      
-      <div class="">
+      
+
+    <div v-if="check">
       <a href="#" @click.prevent="checkTask" class="btn"> {{check ? "✔️" : "🧭"}} </a>
-      <a href="#" @click.prevent="showform" class="btn">✏️</a>
-      <a href="#" @click.prevent="removeTask" class="btn">🗑️</a>
+      <a id="disabledd" href="#" @click.prevent="showform" class="btn disabled"> ✏️ </a>
+      <a href="#" @click.prevent="removeTask" class="btn disabled">🗑️</a>
+    </div>
+    <div v-else>
+      <a href="#" @click.prevent="checkTask" class="btn"> {{check ? "✔️" : "🧭"}} </a>
+      <a id="disabledd" href="#" @click.prevent="showform" class="btn"> ✏️ </a>
+      <a href="#" @click.prevent="removeTask" class="btn ">🗑️</a>
     </div>
       
     </div>
@@ -83,18 +91,14 @@
 
 import { ref } from "vue";
 
-
-
 const props = defineProps(["task"]);
 const emit = defineEmits(["emitRemove", "emitCheck", "emitEdit"]);
-
 
 //const for the Edit task
 const edition = ref(false);
 const showform =() => {
   edition.value = !edition.value;
 }
-
 
 const title = ref(props.task.title);
 const description = ref(props.task.description);
@@ -126,7 +130,8 @@ const removeTask = () => {
       props.task.id);
     };
 
-
+//Stying icons when task is complete
+// {{check ? "document.getElementById("disabledd").className += "disabled" }} 
 
 
   

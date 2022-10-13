@@ -61,10 +61,12 @@ Pendientes:
 
 -Añadir boton para limpiar la app de tareas.
 
--Aplicar filtro de tareas por tareas completadas y no completadas + cambio de color en la difusion de los botones cuando la tarea est marcada como compeltada.
+-Aplicar filtro de tareas por tareas completadas y no completadas 
 
 ## 13/10/2022
 Pendientes:
-
+-Aplicar filtro de tareas por tareas completadas y no completadas.
+-Añadir una mejora del scroll.
+-Problematica de los margenes en sign in/up.
 
 

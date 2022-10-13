@@ -4,7 +4,7 @@
       <div class="description">
         
         <div class="title d-inline-flex justify-content-around align-items-center">
-        <h1>Register to <span class="text-primary"> TaskApp</span>  </h1> <img class=" mt-3" src="../images/logo.png" alt="" /> </div>
+        <h1> <span class="text-primary"> TaskApp</span>  </h1> <img class=" mt-3" src="../images/logo.png" alt="" /> </div>
        <br> <h2 class="text-secondary">Register on TaskApp and start organizing your life.</h2>
       </div>
       <div class="login shadow-lg">
@@ -34,10 +34,12 @@
             type="password"
             placeholder="Confirm Password"
             v-model="confirmPassword"
-            id="password"
+            id="confirmPassword"
             required="true"
             aria-label="confirmPassword"
-          />
+          /> <p v-if="errorMsg" class="text-danger">
+    {{ errorMsg }}
+  </p>
           <button
             class="btn btn-m bg-primary text-white"
             @click.prevent="signUp"
@@ -85,7 +87,6 @@ async function signUp() {
   if (password.value === confirmPassword.value) {
     try {
       await useUserStore().signUp(email.value, password.value);
-      // if (error) throw error;
       redirect.push({ path: "/auth/login" });
     } catch (error) {
       errorMsg.value = error.message;
@@ -107,7 +108,6 @@ async function signUp() {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  /* background-color: rgba(138, 138, 138, 0.472); */
 }
 
 h1 {

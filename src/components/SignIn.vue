@@ -1,15 +1,14 @@
 <template>
  
-  <p v-if="errorMsg" class="">
-    {{ errorMsg }}
-  </p>
+  
 
   <div class="container bg-light bg-gradient">
     <div class="container-lg">
       <div class="description">
         <div class="title d-inline-flex justify-content-around align-items-center">
         <h1 class="text-primary">TaskApp  </h1> <img class="mt-3" src="../images/logo.png" alt="" /> </div>
-       <br> <h2 class="text-secondary ">TaskApp helps you organize your life.</h2>
+       <br> <h2 class="text-secondary ">TaskApp helps you organize your life.</h2> <br>
+       
       </div>
       <div class="login shadow-lg">
         <h2 class="title text-primary">
@@ -35,7 +34,9 @@
             aria-label="password"
             aria-describedby="basic-addon1"
           />
-           
+          <p v-if="errorMsg" class="text-danger text-center">
+    {{ errorMsg }}
+  </p>
           <button
             class="btn btn-m bg-primary text-white"
             @click.prevent="signIn"
@@ -52,8 +53,10 @@
               />
              
             </p>
+            
           </div>
         </form>
+        
       </div>
     </div>
   </div>
@@ -100,12 +103,16 @@ const signIn = async () => {
     redirect.push({ path: "/" });
   } catch (error) {
     // displays error message
-    errorMsg.value = `Error: ${error.message}`;
+    errorMsg.value =  error.message;
     // hides error message
     setTimeout(() => {
       errorMsg.value = null;
     }, 5000);
   }
+  errorMsg.value = "Invalid Login Credentials";
+  setTimeout(() => {
+    errorMsg.value = null;
+  }, 5000);
 };
 </script>
 
