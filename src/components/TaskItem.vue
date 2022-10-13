@@ -1,4 +1,4 @@
-<template class ="">
+<template>
   <br /><br />
   <div class="">
   <div class="card mx-5 mt-5 shadow d-flex ">

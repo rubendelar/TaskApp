@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <br>
-    <br />
-    <br />
-    <!-- <h1 class="text-center">Keep organized ⌛</h1> -->
-    <br />
-    <br />
+   <div class="sticky">
+  
+  <div class="mt-5 pt-5 bg-white">
     <h2 class="text-center font-monospace text-secondary">Stay Organized</h2>
+    <br>
   </div>
-  <br />
-  <div class="mx-5 sticky-sm-top ">
+  
+  
+  <div class="mx-5 bg-white">
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <div class="input-group-text">
@@ -58,6 +56,8 @@
       </button>
     
   </div>
+</div>
+
 </template>
 
 <script setup>
@@ -98,4 +98,15 @@ const newTask = () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.sticky {
+  position: sticky;
+top:70px;
+z-index: 1;
+}
+
+.z-index {
+  z-index: 1;
+}
+
+</style>

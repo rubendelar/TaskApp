@@ -63,9 +63,9 @@ Pendientes:
 
 -Aplicar filtro de tareas por tareas completadas y no completadas 
 
-## 13/10/2022
+## 14/10/2022
 Pendientes:
 -Aplicar filtro de tareas por tareas completadas y no completadas.
--Añadir una mejora del scroll.
+
 
 
