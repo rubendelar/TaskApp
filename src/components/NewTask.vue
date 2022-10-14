@@ -1,13 +1,13 @@
 <template>
    <div class="sticky">
   
-  <div class="mt-5 pt-5 bg-white">
+  <div class="mt-5 pt-5">
     <h2 class="text-center font-monospace text-secondary">Stay Organized</h2>
     <br>
   </div>
   
   
-  <div class="mx-5 bg-white">
+  <div class="mx-5">
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <div class="input-group-text">
@@ -56,6 +56,10 @@
       </button>
     
   </div>
+  <div class=" w-100 pt-3 pb-4 d-inline-flex justify-content-center border-bottom  border-2">
+    <button @click.prevent="filterTask('complete')" class=" btn  btn-sm mx-2">✔️</button> <button @click.prevent="filterTask('all')" class="btn btn-sm   mx-2">📖</button>  <button @click.prevent="filterTask('inProcess')" class="  btn-sm btn mx-2">🧭</button>
+    
+  </div> 
 </div>
 
 </template>
@@ -63,8 +67,9 @@
 <script setup>
 import { ref } from "vue";
 
+
 // constant to save a variable that define the custom event that will be emitted to the homeView
-const emit = defineEmits(["saveNewTask"]);
+const emit = defineEmits(["saveNewTask", "filterTask"]);
 // constant to save a variable that holds the value of the title input field of the new task
 let title = ref("");
 
@@ -96,6 +101,13 @@ const newTask = () => {
     description.value = "";
   }
 };
+
+const filterTask = (string) => {
+  emit(
+  "filterTask", 
+  string);
+};
+
 </script>
 
 <style scoped>
@@ -103,10 +115,9 @@ const newTask = () => {
   position: sticky;
 top:70px;
 z-index: 1;
+background-color: white;
 }
 
-.z-index {
-  z-index: 1;
-}
+
 
 </style>

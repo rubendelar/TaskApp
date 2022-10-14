@@ -1,8 +1,11 @@
 <template>
   <NavBar />
-  <NewTask @saveNewTask="addTaskItems" />
-  <div class=" flex-wrap d-flex justify-content-center">
-    <TaskItem  v-for="task in fetchedTasks" :key="task" :task="task" @emitRemove="deleteTask"  @emitEdit="editTask" @emitCheck="checkTask" />
+  <NewTask @saveNewTask="addTaskItems" @filterTask="filterTasks" />
+  <div class=" flex-wrap d-flex justify-content-center ">
+    <TaskItem  v-for="task in showntasks" :key="task" :task="task" @emitRemove="deleteTask"  @emitEdit="editTask" @emitCheck="checkTask" />
+    
+  
+
   </div>
   <Footer />
 </template>
@@ -18,12 +21,20 @@ import { ref } from "vue";
 
 
 let fetchedTasks = ref([]);
+const showntasks = ref([]);
 
 async function getTasks() {
   fetchedTasks.value = await useTaskStore().fetchTasks();
+  showntasks.value = fetchedTasks.value;
   console.log(fetchedTasks.value);
 }
 getTasks();
+
+const filterTasks = (string) => { 
+if (string==="all") showntasks.value = fetchedTasks.value;
+if (string==="complete") showntasks.value = fetchedTasks.value.filter((task)=>task.is_complete);
+if (string==="inProcess") showntasks.value = fetchedTasks.value.filter((task)=>!task.is_complete);
+};
 
 async function addTaskItems(task) {
   await useTaskStore().addTask(task.title, task.description);
