@@ -196,7 +196,12 @@ h1 {
 
 @media screen and (max-width: 767px) {
   .description {
-    display: none;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  align-items:center;
+  margin-bottom: 50px;
   }
   .container {
     min-width: 200px;
@@ -214,17 +219,17 @@ h1 {
   padding: 0 0 30px 0;
   text-align: center;
   font-weight: bold;
-  display: block;
+  display: none;
 }
 
   .login {
     min-width: 200px;
     width: 100%;
-    height: 525px;
+    height: 400px;
     background-color: white;
     color: black;
     box-sizing: border-box;
-    padding: 10px 15px;
+    padding: 30px 40px;
     border: #d5d5d7 1px solid;
     animation-name: border;
     animation-duration: 2s;

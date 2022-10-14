@@ -9,7 +9,7 @@
     <br>
   </div>
   <div class="text-center">
-    <button @click.prevent="toggleText" class="btn btn-m btn-block border-primary border border-2 text-primary fw-bold w-25 ">
+    <button @click.prevent="toggleText" class="btn btn-m btn-block border-primary border border-2 text-primary fw-bold w-50 ">
       Create Task
     </button>
   </div>

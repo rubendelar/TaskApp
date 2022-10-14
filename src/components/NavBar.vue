@@ -4,7 +4,7 @@
         <a class="navbar-brand fw-bold" href="#"
           ><img src="../images/logo.png" alt="" /> TaskApp
         </a>
-    <span class="text-dark text-bold">
+    <span class="text-dark text-bold hide">
       Welcome <span class="fw-bold text-end">{{name}}</span> 
     </span>
 
@@ -40,4 +40,14 @@
   };
   </script>
   
-  <style></style>
+<style scoped>
+
+  @media screen and (max-width: 525px) {
+    
+.hide{
+  display: none;
+}
+  }
+
+
+</style>
