@@ -1,13 +1,27 @@
 <template>
-   <div class="sticky">
   
-  <div class="mt-5 pt-5">
+  <br> 
+  <br>
+  <br>
+  <div class="sticky2">
+  <div class="mt-5 pt-3">
     <h2 class="text-center font-monospace text-secondary">Stay Organized</h2>
     <br>
   </div>
+  <div class="text-center">
+    <button @click.prevent="toggleText" class="btn btn-m btn-block border-primary border border-2 text-primary fw-bold w-25 ">
+      Create Task
+    </button>
+  </div>
   
+  <div  class=" w-100 pt-3 pb-4 d-inline-flex justify-content-center border-bottom  border-2 ">
+    <button @click.prevent="filterTask('complete')" class=" btn  btn-sm mx-2">✔️</button> <button @click.prevent="filterTask('all')" class="btn btn-sm   mx-2">📖</button>  <button @click.prevent="filterTask('inProcess')" class="  btn-sm btn mx-2">🧭</button>
+  </div> 
+</div>
+
+   <div id="show" class="sticky">
   
-  <div class="mx-5">
+  <div class="mx-5 mt-5">
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <div class="input-group-text">
@@ -44,22 +58,23 @@
       </button>
     </div>
     <br />
-
-    
+    <div class="text-center">
       <button
         type="button"
-        class="btn btn-m btn-block bg-primary text-white w-100 "
+        class="btn btn-m btn-block bg-primary text-white mx-2  "
         @click.prevent="newTask"
       >
         <img src="../images/check2-square.svg" alt="" />
         Create task
       </button>
+
+      <button @click.prevent="toggleText" class="btn btn-m btn-block border-primary border border-2 text-primary mx-2 ">
+      Hide Creator
+    </button>
+    </div>
     
   </div>
-  <div class=" w-100 pt-3 pb-4 d-inline-flex justify-content-center border-bottom  border-2">
-    <button @click.prevent="filterTask('complete')" class=" btn  btn-sm mx-2">✔️</button> <button @click.prevent="filterTask('all')" class="btn btn-sm   mx-2">📖</button>  <button @click.prevent="filterTask('inProcess')" class="  btn-sm btn mx-2">🧭</button>
-    
-  </div> 
+   
 </div>
 
 </template>
@@ -108,15 +123,32 @@ const filterTask = (string) => {
   string);
 };
 
+const toggleText = () => {
+  var x = document.getElementById("show");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 </script>
 
 <style scoped>
 .sticky {
-  position: sticky;
-top:70px;
+position: sticky;
+top:240px;
 z-index: 1;
 background-color: white;
 }
+
+.sticky2 {
+position: sticky;
+top:60px;
+z-index: 1;
+background-color: white;
+}
+
 
 
 
