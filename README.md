@@ -1,71 +1,19 @@
-# FINAL PROJECT
+![taskApp](https://user-images.githubusercontent.com/112575528/203939410-8b5afb5f-0119-4a77-b7b8-a56833e93530.PNG)
 
-## Primer dia de projecto 04/10/2022
+# IRONHACK FINAL PROJECT
 
-- Hacer un bozeto del diseño.
+This is a simple To-do app builded with Vue.js that allows users to create an account, record tasks, edit them and mark them as complete. The app is linked to a database, where all the user and task data is stored. The database used for this project is Supabase.
 
-- Entender la estructura de la pagina web, incluyendo Javascript
 
-## Segundo dia de projecto 05/10/2022
+## Functionalities
 
--Diseño sign in y sign up realizado y responsive.
-
-## Tercer dia de projecto 06/10/2022
-
--Finalizar el diseño de todas las paginas de la app. Asegurando el modo responsive.
-
--Comprender la logica involucrada de cada una de las interacciones.
-
--Empezar a trabajar con la idea de que el fin de semana va a haber que avanzar javascript. Recabar informacion.
-
-## Viernes 07/10/2022
-
--Existe conexion entre las tascas de la supabase y la app.
--Log funcional.
--Existe diseño responsive en toda la app a excepcion del sign up.
-
-.Falta incorporar nombre de usuario en el Nav.
--Addtask da error 400.
--Funciones de check, edit, y remove pendientes de aplicar logica.
-
-## 09/10/2022
-
--Add task funcional
--footer responsive
--Nombre de usuario incorporado
--Sign Up responsive y funcional
-
--Funciones de check, edit, y remove pendientes de aplicar logica.
-
-## 11/10/2022
-
-Todas las funciones de la App funcionando.
-
-Pendientes:
-Solucionar problema del responsive en resoluciones grandes.
-Añadir una mejora del scroll.
-Mejorar la distribucion de las tareas.
-Encontrar un background color apropiado para el Sign in y el  Sign up.
-Añadir estilo a las tareas finalizadas.
-Añadir boton para limpiar la app de tareas.
-
-Extras: 
-Aplicar filtro de tareas por tareas completadas y no completadas
-
-## 12/10/2022
-Pendientes:
-
--Añadir una mejora del scroll.
-
--Añadir estilo a las tareas finalizadas.
-
--Añadir boton para limpiar la app de tareas.
-
--Aplicar filtro de tareas por tareas completadas y no completadas 
-
-## 14/10/2022
-Pendientes:
--Aplicar filtro de tareas por tareas completadas y no completadas.
+ - Authentication (sign up, sign in, sign out.
+ - A front-end that displays the user’s personal to-do list.
+ - An ability to add new tasks.
+ - An ability to edit existing tasks.
+ - An ability to mark tasks as complete/incomplete.
+ - An ability to delete existing tasks  - A store and a database that your app can call data from.
+  - The app fetches all tasks from the logged-in user’s task list stored in Supabase.
 
 
 
