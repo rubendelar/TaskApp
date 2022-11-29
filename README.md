@@ -7,13 +7,14 @@ This is a simple To-do app builded with Vue.js that allows users to create an ac
 
 ## Functionalities
 
- - Authentication (sign up, sign in, sign out.
+ - Authentication (sign up, sign in, sign out).
  - A front-end that displays the user’s personal to-do list.
- - An ability to add new tasks.
- - An ability to edit existing tasks.
- - An ability to mark tasks as complete/incomplete.
- - An ability to delete existing tasks  - A store and a database that your app can call data from.
-  - The app fetches all tasks from the logged-in user’s task list stored in Supabase.
+ - Ability to add new tasks.
+ - Ability to edit existing tasks.
+ - Ability to mark tasks as complete/incomplete.
+ - Ability to delete existing tasks.
+ - A store and a database from where app calls the data.
+ - The app fetches all tasks from the logged-in user’s task list stored in Supabase.
 
 
 
